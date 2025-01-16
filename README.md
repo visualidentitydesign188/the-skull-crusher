@@ -1,1 +1,1 @@
-# the-skull-crusher
+just npm i then run
