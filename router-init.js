@@ -5,6 +5,7 @@ const router = new Router();
 
 router.register('/controls', () => import('./pages/controls.js'));
 router.register('/story', () => import('./pages/story.js'));
+router.register('404', () => import('./pages/404.js'));
 
 document.addEventListener('DOMContentLoaded', () => {
     // Controls button
@@ -24,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Handle 404 errors
+    router.on404(() => {
+        router.navigate('404', false);
+    });
+
     window.addEventListener('popstate', (e) => {
         if (e.state?.path) {
             router.navigate(e.state.path, false);
@@ -33,5 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     if (path === '/controls' || path === '/story') {
         router.navigate(path, false);
+    } else if (path !== '/') {
+        router.navigate('404', false);
     }
 }); 

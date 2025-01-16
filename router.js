@@ -6,6 +6,7 @@ export class Router {
         this.currentPage = null;
         this.isTransitioning = false;
         this.loader = null;
+        this.notFoundHandler = null;
         
         // Create container for pages
         this.container = document.createElement('div');
@@ -27,9 +28,13 @@ export class Router {
         this.routes.set(path, modulePromise);
     }
 
+    on404(handler) {
+        this.notFoundHandler = handler;
+    }
+
     async navigate(path, pushState = true) {
         // Prevent navigation during transitions
-        if (this.isTransitioning || !this.routes.has(path)) {
+        if (this.isTransitioning) {
             return;
         }
 
@@ -38,6 +43,14 @@ export class Router {
         try {
             // Show loading indicator
             this.showLoader();
+
+            // Check if route exists
+            if (!this.routes.has(path)) {
+                if (this.notFoundHandler) {
+                    this.notFoundHandler();
+                    return;
+                }
+            }
 
             // Load the page module
             const pageModule = await this.routes.get(path)();
@@ -52,6 +65,15 @@ export class Router {
             const closeBtn = newPage.querySelector('.close-page');
             if (closeBtn) {
                 closeBtn.addEventListener('click', () => this.close());
+            }
+
+            // Handle back home button click for 404 page
+            const backHomeBtn = newPage.querySelector('.back-home');
+            if (backHomeBtn) {
+                backHomeBtn.addEventListener('click', () => {
+                    this.close();
+                    window.history.pushState(null, '', '/');
+                });
             }
 
             // Transition out current page if it exists
@@ -76,7 +98,7 @@ export class Router {
             await this.transitionIn(newPage);
 
             // Update browser history
-            if (pushState) {
+            if (pushState && path !== '404') {
                 window.history.pushState({ path }, '', path);
             }
 

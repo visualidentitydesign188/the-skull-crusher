@@ -38,6 +38,8 @@
 
   <meta http-equiv="hardware-acceleration" content="true">
   <meta http-equiv="gpu-preference" content="high-performance">
+  <script src="https://cdn.unicorn.studio/v1.2.5/unicornStudio.umd.js"></script>
+
 </head>
 
 <body>
@@ -309,9 +311,16 @@
 
       </a>
     </footer>
-  </div>
-
+   
   <script type="module" src="/main.js"></script>
+  <script>
+    UnicornStudio.init()
+      .then((scenes) => {
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  </script>
 </body>
 
 </html>

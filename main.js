@@ -18,6 +18,7 @@ import Stats from 'three/examples/jsm/libs/stats.module.js';
 import './menuAnimation.js';
 import './router-init.js';
 
+
 function select(selector) {
   return document.querySelector(selector);
 }
