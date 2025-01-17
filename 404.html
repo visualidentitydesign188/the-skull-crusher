@@ -3,14 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>404 - Page Not Found | The Skull Crusher</title>
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .error-page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .error-content {
+            padding: 2rem;
+        }
+        .error-content h1 {
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-family: 'Metal Mania', serif;
+            color: red;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .error-content h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .error-content p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .back-home {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-home:hover {
+            background: red;
+            border-color: red;
+        }
+    </style>
 </head>
 <body>
-    <div class="page-content error-page">
-        <iframe class="unicorn-embed" src="https://unicorn.studio/embed/NDNw1EAC4p7JnplqOOQ7" loading="lazy"></iframe>
+    <div class="error-page">
+        <div class="error-content">
+            <iframe class="unicorn-embed" src="https://unicorn.studio/embed/NDNw1EAC4p7JnplqOOQ7" loading="lazy"></iframe>
+            <a href="/" class="back-home">Return Home</a>
+        </div>
     </div>
-    <script type="module" src="/main.js"></script>
 </body>
 </html> 
