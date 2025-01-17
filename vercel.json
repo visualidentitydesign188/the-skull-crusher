@@ -3,7 +3,8 @@
   "rewrites": [
     { "source": "/controls", "destination": "/index.html" },
     { "source": "/story", "destination": "/index.html" },
-    { "source": "/404", "destination": "/index.html" }
+    { "source": "/404", "destination": "/index.html" },
+    { "source": "/:path*", "destination": "/index.html" }
   ],
   "cleanUrls": true,
   "trailingSlash": false,
@@ -17,6 +18,5 @@
         }
       ]
     }
-  ],
-  "errorPage": "404.html"
+  ]
 } 
