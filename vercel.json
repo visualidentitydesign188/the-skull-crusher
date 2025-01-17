@@ -28,6 +28,5 @@
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
-  ],
-  "errorPage": "404.html"
+  ]
 } 
