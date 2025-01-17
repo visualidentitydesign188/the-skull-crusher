@@ -47,6 +47,8 @@ export class Router {
             // Check if route exists
             if (!this.routes.has(path)) {
                 if (this.notFoundHandler) {
+                    // Set HTTP status code to 404
+                    document.title = '404 - Page Not Found | The Skull Crusher';
                     this.notFoundHandler();
                     return;
                 }

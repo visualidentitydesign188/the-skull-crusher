@@ -42,4 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (path !== '/') {
         router.navigate('404', false);
     }
-}); 
+});
