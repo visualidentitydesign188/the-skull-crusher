@@ -32,6 +32,7 @@
   <link rel="preload" href="/fonts/mask.otf" as="font" type="font/otf" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" as="style" />
 
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
@@ -44,7 +45,7 @@
 
 
   <div id="loading-screen">
-    <video src="/preloader.webm" autoplay loop muted playsinline alt="Loading animation" title="Loading animation"
+    <video class="preloader-vid" src="/preloader.webm" autoplay loop muted playsinline alt="Loading animation" title="Loading animation"
       preload="auto" fetchpriority="high" loading="eager" importance="high">
     </video>
 
@@ -112,11 +113,12 @@
         >> SKIP >>
       </button>
     </div>
+
     <div id="loading-screen3">
+      <iframe class="mainScreen" src="https://unicorn.studio/embed/4H2xcZb1ZGauoc3eukf8">
+      </iframe>
+
       <div class="loading-content">
-        <div class="skull-logo">
-          <img src="/images/skull.webp" alt="">
-        </div>
         <h1>the skull crusher</h1>
         <h3>the skull crusher</h3>
         <a href="https://www.visualidentity.co.in/" target="_blank">
@@ -129,6 +131,8 @@
       </div>
 
       <div class="index">
+
+     
         <button class="enter">enter</button>
         <button class="controls">controls & rules</button>
         <button class="rules">story</button>

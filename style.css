@@ -52,11 +52,15 @@ img {
   z-index: 10;
 }
 
-
-.unicorn-embed {
+.mainScreen {
   width: 100%;
   height: 100vh;
   border: none;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  user-select: none ;
 }
 
 #camera-container {
@@ -187,11 +191,10 @@ img {
   z-index: 100;
   display: none;
   opacity: 0;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-
-
+  padding-bottom: 5vh;
 }
 
 .back-btn-container {
@@ -1058,7 +1061,7 @@ img {
       width: 100%;
       display: flex;
       align-items: center;
-      gap:2vw;
+      gap: 2vw;
 
       svg {
         width: clamp(32px, 5vw, 48px);

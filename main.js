@@ -18,6 +18,7 @@ import Stats from 'three/examples/jsm/libs/stats.module.js';
 import './menuAnimation.js';
 import './router-init.js';
 
+
 function select(selector) {
   return document.querySelector(selector);
 }
@@ -68,6 +69,9 @@ function handleNameSubmission() {
             gsap.to('#loading-screen4', {
               opacity: 0,
               duration: 1,
+              onStart: () => {
+                gsap.set('.preloader-vid', { display: 'none' });
+              },
               onComplete: () => {
                 gsap.set('#loading-screen4', { display: 'none' });
                 gsap.set('#loading-screen3', { display: 'flex' });
@@ -133,6 +137,9 @@ storyVideo.addEventListener('ended', () => {
   gsap.to('#loading-screen4', {
     opacity: 0,
     duration: 1,
+    onStart: () => {
+      gsap.set('.preloader-vid', { display: 'none' });
+    },
     onComplete: () => {
       gsap.set('#loading-screen4', { display: 'none' });
       gsap.set('#loading-screen3', { display: 'flex' });
@@ -179,9 +186,13 @@ skipButton.addEventListener('click', () => {
     });
   }
 
+
   gsap.to('#loading-screen4', {
     opacity: 0,
     duration: 1,
+    onStart: () => {
+      gsap.set('.preloader-vid', { display: 'none' });
+    },
     onComplete: () => {
       gsap.set('#loading-screen4', { display: 'none' });
       gsap.set('#loading-screen3', { display: 'flex' });
