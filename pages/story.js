@@ -10,7 +10,7 @@ export default async function Story() {
                 </button>
             </header>
             <main>
-                <video  autoplay loop playsinline class="story-video">
+                <video class="story-video" autoplay loop playsinline>
                     <source src="/videos/story.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>

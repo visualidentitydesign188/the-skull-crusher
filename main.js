@@ -112,6 +112,14 @@ backBtn.addEventListener('click', () => {
     opacity: 1,
     duration: 1,
   });
+
+  gsap.set('.mainScreen', {
+    display: 'block',
+  });
+  gsap.to('.mainScreen', {
+    opacity: 1,
+    duration: 1,
+  });
 });
 
 submitBtn.removeEventListener('click', handleNameSubmit);
@@ -259,6 +267,16 @@ loadingManager.onLoad = function () {
       startTime = Date.now();
       animate();
     }
+
+    gsap.to('.mainScreen', {
+      opacity: 0,
+      duration: 1,
+      onComplete: () => {
+        gsap.set('.mainScreen', {
+          display: 'none',
+        });
+      }
+    });
 
     // Fade out the loading screen
     gsap.to('#loading-screen', {
