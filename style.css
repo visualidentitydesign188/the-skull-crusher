@@ -360,12 +360,25 @@ img {
 
 #loading-screen2 {
   max-width: 100%;
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 103;
   display: none;
+
+
+  .tutorial {
+    width: 20rem;
+    height: 13rem;
+    position: absolute;
+    z-index: 10;
+    top:2%;
+    left: 2%;
+    aspect-ratio: 16/9;
+    /* background-color: red; */
+  }
 
 
   .input-container {

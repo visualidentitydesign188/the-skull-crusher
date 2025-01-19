@@ -44,7 +44,7 @@
 <body>
 
 
-  <iframe class="mainScreen"  src="https://unicorn.studio/embed/4H2xcZb1ZGauoc3eukf8">
+  <iframe class="mainScreen" src="https://unicorn.studio/embed/4H2xcZb1ZGauoc3eukf8">
   </iframe>
 
   <div id="loading-screen">
@@ -100,6 +100,22 @@
     </div>
 
     <div id="loading-screen2">
+
+      <object class="tutorial" aria-label="Vimeo video player: Descriptive title of the video"
+        data="https://player.vimeo.com/video/1048165488?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479">
+        <param name="movie"
+          value="https://player.vimeo.com/video/1048165488?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" />
+        <param name="allowFullScreen" value="true" />
+        <param name="allowscriptaccess" value="always" />
+        <embed width="640" height="360"
+          src="https://player.vimeo.com/video/1048165488?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          class="youtube-player" allowscriptaccess="always" allowfullscreen="true"
+          aria-label="Embedded Vimeo video: Descriptive title of the video"></embed>
+        <p>Your browser does not support embedded videos. Here is a <a
+            href="http://player.vimeo.com/external/85569724.sd.mp4?s=43df5df0d733011263687d20a47557e4">link to the
+            video</a> instead.</p>
+      </object>
+
       <div class="input-container">
         <label for="name">choose your hero name:</label>
         <input type="text" required id="player-name" name="name">
@@ -317,6 +333,7 @@
   </div>
 
   <script type="module" src="/main.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 
 </html>
